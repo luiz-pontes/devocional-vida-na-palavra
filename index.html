@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Devocional Vida na Palavra - Transforme sua caminhada diária</title>
+
+  
+
+  <!-- Fontes Google -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  
+
+  <style>
+
+    /* Reset & Variáveis */
+
+    :root {
+
+      --bg-light: #f8fafc;
+
+      --card-bg: #ffffff;
+
+      --text-main: #1e293b;
+
+      --text-muted: #64748b;
+
+      --primary: #2563eb;
+
+      --primary-hover: #1d4ed8;
+
+      --accent: #d97706;
+
+      --accent-light: #fef3c7;
+
+      --border: #e2e8f0;
+
+      --max-width: 1100px;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    body {
+
+      font-family: 'Plus Jakarta Sans', sans-serif;
+
+      background-color: var(--bg-light);
+
+      color: var(--text-main);
+
+      line-height: 1.6;
+
+      -webkit-font-smoothing: antialiased;
+
+    }
+
+    h1, h2, h3, .brand-font {
+
+      font-family: 'Cinzel', serif;
+
+    }
+
+    /* Utilitários Layout */
+
+    .container {
+
+      max-width: var(--max-width);
+
+      margin: 0 auto;
+
+      padding: 0 20px;
+
+    }
+
+    /* Cabeçalho */
+
+    header {
+
+      background-color: var(--card-bg);
+
+      border-bottom: 1px solid var(--border);
+
+      padding: 20px 0;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 100;
+
+    }
+
+    .header-content {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+    }
+
+    .logo {
+
+      font-size: 1.25rem;
+
+      font-weight: 700;
+
+      color: var(--text-main);
+
+      text-decoration: none;
+
+      letter-spacing: 0.5px;
+
+    }
+
+    .logo span {
+
+      color: var(--accent);
+
+    }
+
+    /* Hero Section */
+
+    .hero {
+
+      padding: 80px 0 60px;
+
+      text-align: center;
+
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
+
+    }
+
+    .tagline {
+
+      display: inline-block;
+
+      background-color: var(--accent-light);
+
+      color: var(--accent);
+
+      font-size: 0.875rem;
+
+      font-weight: 600;
+
+      padding: 6px 16px;
+
+      border-radius: 20px;
+
+      margin-bottom: 20px;
+
+    }
+
+    .hero h1 {
+
+      font-size: 2.75rem;
+
+      line-height: 1.2;
+
+      color: var(--text-main);
+
+      margin-bottom: 20px;
+
+    }
+
+    .hero p {
+
+      font-size: 1.125rem;
+
+      color: var(--text-muted);
+
+      max-width: 650px;
+
+      margin: 0 auto 32px;
+
+    }
+
+    /* Botão de Ação */
+
+    .btn-primary {
+
+      display: inline-block;
+
+      background-color: var(--primary);
+
+      color: #ffffff;
+
+      font-weight: 600;
+
+      padding: 16px 36px;
+
+      border-radius: 8px;
+
+      text-decoration: none;
+
+      transition: background-color 0.2s ease, transform 0.1s ease;
+
+      box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+
+    }
+
+    .btn-primary:hover {
+
+      background-color: var(--primary-hover);
+
+      transform: translateY(-1px);
+
+    }
+
+    /* Seção de Benefícios */
+
+    .features {
+
+      padding: 60px 0;
+
+    }
+
+    .section-title {
+
+      text-align: center;
+
+      font-size: 2rem;
+
+      margin-bottom: 48px;
+
+      color: var(--text-main);
+
+    }
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+      gap: 24px;
+
+    }
+
+    .card {
+
+      background: var(--card-bg);
+
+      border: 1px solid var(--border);
+
+      border-radius: 12px;
+
+      padding: 32px 24px;
+
+      transition: border-color 0.2s ease;
+
+    }
+
+    .card:hover {
+
+      border-color: #cbd5e1;
+
+    }
+
+    .card-icon {
+
+      width: 48px;
+
+      height: 48px;
+
+      background-color: var(--accent-light);
+
+      color: var(--accent);
+
+      border-radius: 8px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 1.25rem;
+
+      font-weight: bold;
+
+      margin-bottom: 20px;
+
+    }
+
+    .card h3 {
+
+      font-size: 1.25rem;
+
+      margin-bottom: 12px;
+
+    }
+
+    .card p {
+
+      color: var(--text-muted);
+
+      font-size: 0.95rem;
+
+    }
+
+    /* Seção de Depoimento / Citação */
+
+    .quote-section {
+
+      padding: 60px 0;
+
+      background-color: var(--card-bg);
+
+      border-top: 1px solid var(--border);
+
+      border-bottom: 1px solid var(--border);
+
+      text-align: center;
+
+    }
+
+    .quote-content {
+
+      max-width: 700px;
+
+      margin: 0 auto;
+
+    }
+
+    blockquote {
+
+      font-size: 1.25rem;
+
+      font-style: italic;
+
+      color: var(--text-main);
+
+      margin-bottom: 16px;
+
+    }
+
+    cite {
+
+      font-style: normal;
+
+      font-weight: 600;
+
+      color: var(--accent);
+
+      font-size: 0.9rem;
+
+    }
+
+    /* Rodapé */
+
+    footer {
+
+      padding: 40px 0;
+
+      text-align: center;
+
+      color: var(--text-muted);
+
+      font-size: 0.875rem;
+
+    }
+
+    /* Responsividade */
+
+    @media (max-width: 768px) {
+
+      .hero h1 {
+
+        font-size: 2rem;
+
+      }
+
+      .hero p {
+
+        font-size: 1rem;
+
+      }
+
+      .features {
+
+        padding: 40px 0;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Header -->
+
+  <header>
+
+    <div class="container header-content">
+
+      <a href="#" class="logo">VIDA NA <span>PALAVRA</span></a>
+
+    </div>
+
+  </header>
+
+  <!-- Hero Section -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <span class="tagline">Devocional Diário</span>
+
+      <h1>Aprofunde sua Fé na Palavra Sagrada</h1>
+
+      <p>Um guia diário reflexivo projetado para edificar sua vida espiritual, trazer clareza às suas orações e fortalecer suas reflexões diárias.</p>
+
+      <a href="#inscrever" class="btn-primary">Começar Minha Jornada</a>
+
+    </div>
+
+  </section>
+
+  <!-- Benefícios / Pilares -->
+
+  <section class="features">
+
+    <div class="container">
+
+      <h2 class="section-title">O que você encontrará</h2>
+
+      <div class="grid">
+
+        
+
+        <div class="card">
+
+          <div class="card-icon">01</div>
+
+          <h3>Reflexões Profundas</h3>
+
+          <p>Textos explicativos acessíveis que ajudam a contextualizar os ensinamentos bíblicos no contexto do seu dia a dia.</p>
+
+        </div>
+
+        <div class="card">
+
+          <div class="card-icon">02</div>
+
+          <h3>Direcionamento de Oração</h3>
+
+          <p>Guias focados para orientar seus momentos intercessão e momentos de silêncio e gratidão.</p>
+
+        </div>
+
+        <div class="card">
+
+          <div class="card-icon">03</div>
+
+          <h3>Aplicação Prática</h3>
+
+          <p>Desafios e perguntas direcionadas para ajudar a aplicar os princípios cristãos em suas decisões diárias.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Citação / Versículo -->
+
+  <section class="quote-section">
+
+    <div class="container quote-content">
+
+      <blockquote>
+
+        "Lâmpada para os meus pés é tua palavra e luz, para o meu caminho."
+
+      </blockquote>
+
+      <cite>Salmos 119:105</cite>
+
+    </div>
+
+  </section>
+
+  <!-- Call to Action Final -->
+
+  <section id="inscrever" style="padding: 80px 0; text-align: center;">
+
+    <div class="container">
+
+      <h2 style="margin-bottom: 16px;">Receba o Conteúdo Diariamente</h2>
+
+      <p style="color: var(--text-muted); margin-bottom: 32px;">Junte-se à comunidade e fortaleça seu hábito de leitura diária.</p>
+
+      <a href="#" class="btn-primary">Acessar Devocional Gratuito</a>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    <div class="container">
+
+      <p>&copy; Devocional Vida na Palavra. Todos os direitos reservados.</p>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
